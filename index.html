@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutoriel Gantt – Apprendre le diagramme de Gantt</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f5f5;
+            line-height: 1.6;
+        }
+        header {
+            background: #4A69BD;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        section {
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+            background: #ddd;
+        }
+        #gantt {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Tutoriel Gantt</h1>
+    <nav>
+        <a href="#intro">Accueil</a>
+        <a href="#definition">Comprendre</a>
+        <a href="#creer">Créer</a>
+        <a href="#example">Exemple</a>
+    </nav>
+</header>
+
+<section id="intro">
+    <h2>Bienvenue sur le tutoriel Gantt</h2>
+    <p>Ce site vous apprend à comprendre et utiliser un diagramme de Gantt, étape par étape.</p>
+</section>
+
+<section id="definition">
+    <h2>Qu'est-ce qu'un diagramme de Gantt ?</h2>
+    <p>Un diagramme de Gantt est un outil visuel permettant de planifier les tâches d'un projet dans le temps.</p>
+    <ul>
+        <li>Liste des tâches</li>
+        <li>Durées</li>
+        <li>Dépendances entre les tâches</li>
+        <li>Dates de début et de fin</li>
+    </ul>
+</section>
+
+<section id="creer">
+    <h2>Comment créer un diagramme de Gantt ?</h2>
+    <ol>
+        <li>Identifiez les tâches du projet</li>
+        <li>Définissez leur durée estimée</li>
+        <li>Ajoutez les dépendances</li>
+        <li>Placez-les dans un calendrier</li>
+    </ol>
+</section>
+
+<section id="example">
+    <h2>Exemple interactif</h2>
+    <p>Voici un petit exemple utilisant la bibliothèque Frappe Gantt.</p>
+
+    <div id="gantt"></div>
+</section>
+
+<footer>
+    <p>© 2025 - Tutoriel Gantt</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/frappe-gantt/0.5.0/frappe-gantt.min.js"></script>
+<script>
+    var tasks = [
+        {
+            id: 'T1',
+            name: 'Analyse',
+            start: '2025-01-01',
+            end: '2025-01-03'
+        },
+        {
+            id: 'T2',
+            name: 'Développement',
+            start: '2025-01-04',
+            end: '2025-01-10'
+        },
+        {
+            id: 'T3',
+            name: 'Tests',
+            start: '2025-01-11',
+            end: '2025-01-14'
+        }
+    ];
+
+    var gantt = new Gantt("#gantt", tasks);
+</script>
+
+</body>
+</html>
