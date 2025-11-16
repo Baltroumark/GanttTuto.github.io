@@ -3,122 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tutoriel Gantt – Apprendre le diagramme de Gantt</title>
+    <title>Tutoriel Gantt – Documentation complète</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #f5f5f5;
-            line-height: 1.6;
-        }
-        header {
-            background: #4A69BD;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        section {
-            padding: 20px;
-            max-width: 900px;
-            margin: auto;
-            background: white;
-            margin-top: 20px;
-            border-radius: 8px;
-        }
-        footer {
-            text-align: center;
-            padding: 15px;
-            margin-top: 20px;
-            background: #ddd;
-        }
-        #gantt {
-            width: 100%;
-            height: 300px; /* hauteur minimum */
-        }
-
+        body { font-family: Arial, sans-serif; margin: 0; background: #f5f7fa; line-height: 1.7; }
+        header { background: #304FFE; color: #fff; padding: 20px; text-align: center; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+        section { padding: 25px; background: #fff; margin: 20px auto; max-width: 900px; border-radius: 8px; }
+        h2 { color: #304FFE; }
+        footer { text-align: center; padding: 20px; background: #e0e0e0; }
+        pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; }
+        .tip { background: #E3F2FD; padding: 15px; border-left: 5px solid #2196F3; border-radius: 4px; }
+        .warning { background: #FFF3E0; padding: 15px; border-left: 5px solid #FB8C00; border-radius: 4px; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Tutoriel Gantt</h1>
+    <h1>Tutoriel Gantt – Documentation Technique</h1>
     <nav>
-        <a href="#intro">Accueil</a>
-        <a href="#definition">Comprendre</a>
-        <a href="#creer">Créer</a>
-        <a href="#example">Exemple</a>
+        <a href="#intro">Introduction</a>
+        <a href="#concepts">Concepts clés</a>
+        <a href="#creation">Créer un Gantt</a>
+        <a href="#logiciels">Logiciels Gantt</a>
+        <a href="#workflow">Méthodologie</a>
     </nav>
 </header>
 
 <section id="intro">
-    <h2>Bienvenue sur le tutoriel Gantt</h2>
-    <p>Ce site vous apprend à comprendre et utiliser un diagramme de Gantt, étape par étape.</p>
+    <h2>Introduction</h2>
+    <p>Le diagramme de Gantt est un outil essentiel en gestion de projet. Il permet de visualiser les tâches, leur durée et leur enchaînement dans un calendrier. Cette documentation fournit une explication détaillée de son fonctionnement et de son utilisation dans des environnements professionnels.</p>
 </section>
 
-<section id="definition">
-    <h2>Qu'est‑ce qu'un diagramme de Gantt ?</h2>
-    <p>Un diagramme de Gantt est un outil visuel permettant de planifier les tâches d'un projet dans le temps.</p>
+<section id="concepts">
+    <h2>Concepts clés d'un diagramme de Gantt</h2>
+    <h3>1. Les tâches</h3>
+    <p>Élément de base du Gantt : chaque tâche représente une activité du projet.</p>
+
+    <h3>2. Les dates de début et de fin</h3>
+    <p>Permettent de situer la tâche dans le calendrier global du projet.</p>
+
+    <h3>3. Les dépendances</h3>
+    <p>Certains travaux ne peuvent commencer que lorsque d'autres sont terminés (Finish-to-Start, Start-to-Start…).</p>
+
+    <h3>4. Le chemin critique</h3>
+    <p>C'est la suite de tâches qui détermine la durée minimale totale du projet.</p>
+
+    <div class="tip">
+        💡 <strong>Astuce :</strong> Un retard sur une tâche du chemin critique retarde tout le projet.
+    </div>
+</section>
+
+<section id="creation">
+    <h2>Comment créer un diagramme de Gantt</h2>
+
+    <h3>Étape 1 – Identifier toutes les tâches</h3>
+    <p>Commencez par lister les tâches nécessaires à la réalisation du projet. Exemple :</p>
     <ul>
-        <li>Liste des tâches</li>
-        <li>Durées</li>
-        <li>Dépendances entre les tâches</li>
-        <li>Dates de début et de fin</li>
+        <li>Analyse des besoins</li>
+        <li>Rédaction du cahier des charges</li>
+        <li>Développement</li>
+        <li>Tests</li>
+        <li>Déploiement</li>
     </ul>
+
+    <h3>Étape 2 – Estimer la durée</h3>
+    <p>Chaque tâche doit avoir une durée estimée (en jours/heures).</p>
+
+    <h3>Étape 3 – Définir les dépendances</h3>
+    <p>Exemple : les tests ne peuvent commencer qu'après le développement.</p>
+
+    <h3>Étape 4 – Organiser la timeline</h3>
+    <p>Placez vos tâches dans un calendrier, en évitant les chevauchements impossibles.</p>
+
+    <h3>Exemple de pseudo-code pour un Gantt</h3>
+    <pre>
+Tâche: Analyse
+Début: 01/03/2025
+Fin:   03/03/2025
+Dépendances: aucune
+
+Tâche: Développement
+Début: 04/03/2025
+Fin:   10/03/2025
+Dépendances: Analyse
+    </pre>
 </section>
 
-<section id="creer">
-    <h2>Comment créer un diagramme de Gantt ?</h2>
-    <ol>
-        <li>Identifiez les tâches du projet</li>
-        <li>Définissez leur durée estimée</li>
-        <li>Ajoutez les dépendances</li>
-        <li>Placez-les dans un calendrier</li>
-    </ol>
+<section id="logiciels">
+    <h2>Logiciels permettant de créer un Gantt</h2>
+
+    <h3>1. Microsoft Project</h3>
+    <p>Idéal pour les projets complexes, avec gestion avancée des ressources, budgets et charges.</p>
+
+    <h3>2. GanttProject</h3>
+    <p>Logiciel gratuit open-source, simple et accessible.</p>
+
+    <h3>3. Trello + extensions</h3>
+    <p>Extensions comme Planyway permettent de transformer des cartes Trello en Gantt.</p>
+
+    <h3>4. Notion</h3>
+    <p>Possède une vue timeline très proche du Gantt.</p>
+
+    <div class="warning">
+        ⚠️ <strong>Attention :</strong> Tous les outils ne gèrent pas les dépendances entre tâches.
+    </div>
 </section>
 
-<section id="example">
-    <h2>Exemple interactif</h2>
-    <p>Voici un petit exemple utilisant la bibliothèque Frappe Gantt.</p>
+<section id="workflow">
+    <h2>Méthodologie d'utilisation du Gantt</h2>
 
-    <div id="gantt"></div>
+    <h3>1. Planification initiale</h3>
+    <p>Établissez l'ensemble des tâches et les responsables associés.</p>
+
+    <h3>2. Suivi du projet</h3>
+    <p>Un Gantt doit être mis à jour régulièrement pour refléter l'avancement réel.</p>
+
+    <h3>3. Réévaluation et ajustements</h3>
+    <p>Lorsque des tâches prennent du retard, il faut recalculer la timeline.</p>
+
+    <h3>4. Communication</h3>
+    <p>Le Gantt est un support visuel puissant pour les réunions de suivi.</p>
+
+    <div class="tip">
+        📌 <strong>Conseil :</strong> Exportez votre Gantt en PDF avant chaque réunion pour conserver un historique.
+    </div>
 </section>
 
 <footer>
-    <p>© 2025 - Tutoriel Gantt</p>
+    <p>© 2025 – Documentation Gantt</p>
 </footer>
-
-<link rel="stylesheet" href="https://unpkg.com/frappe-gantt/dist/frappe-gantt.css">
-<script src="https://unpkg.com/frappe-gantt/dist/frappe-gantt.min.js"></script>
-<script>
-var tasks = [
-  {
-    id: 'T1',
-    name: 'Analyse',
-    start: '2025-01-01',
-    end: '2025-01-03'
-  },
-  {
-    id: 'T2',
-    name: 'Développement',
-    start: '2025-01-04',
-    end: '2025-01-10'
-  },
-  {
-    id: 'T3',
-    name: 'Tests',
-    start: '2025-01-11',
-    end: '2025-01-14'
-  }
-];
-
-var gantt = new Gantt("#gantt", tasks);
-</script>
 
 </body>
 </html>
